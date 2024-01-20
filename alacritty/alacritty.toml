@@ -1,0 +1,155 @@
+
+[colors.bright]
+black = "#5b5f71"
+blue = "#a0b9d8"
+cyan = "#7dc2c7"
+green = "#92c47e"
+magenta = "#c6aed7"
+red = "#fe9f7c"
+white = "#f0ecfe"
+yellow = "#d2b45f"
+
+[colors.normal]
+black = "#2e313d"
+blue = "#8296b0"
+cyan = "#659ea2"
+green = "#76a065"
+magenta = "#a18daf"
+red = "#cf8164"
+white = "#b5b4c9"
+yellow = "#ab924c"
+
+[colors.primary]
+background = "#191c25"
+foreground = "#b5b4c9"
+[cursor]
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Never"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.glyph_offset]
+y = 9
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.offset]
+y = 16
+
+[scrolling]
+history = 2000
+
+[shell]
+args = ["-l", "-c", "tmux"]
+program = "/bin/zsh"
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[window]
+decorations = "buttonless"
+opacity = 0.9
+
+[window.dimensions]
+columns = 90
+lines = 30
+
+[window.padding]
+x = 5
+y = 5
