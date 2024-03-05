@@ -1,22 +1,14 @@
 function ColorMyPencils(color)
   color = color or "rose-pine"
   vim.cmd.colorscheme(color)
-  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 return {
-  -- add gruvbox
-  {
-    "ellisonleao/gruvbox.nvim",
-    -- config = function()
-    --   ColorMyPencils("gruvbox")
-    -- end,
-  },
+  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
   {
     "sainnhe/gruvbox-material",
     enabled = true,
-    priority = 1000,
+    -- priority = 1000,
     config = function()
       vim.g.gruvbox_material_transparent_background = 0
       vim.g.gruvbox_material_foreground = "mix"
@@ -34,60 +26,23 @@ return {
   },
   {
     "rose-pine/neovim",
-    as = "rose-pine",
+    name = "rose-pine",
     config = function()
       require("rose-pine").setup({
         disable_background = true,
-        highlight_groups = {
-          TelescopeBorder = { fg = "highlight_high", bg = "none" },
-          TelescopeNormal = { bg = "none" },
-          TelescopePromptNormal = { bg = "base" },
-          TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-          TelescopeSelection = { fg = "text", bg = "base" },
-          TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
+        styles = {
+          transparency = true,
         },
       })
+      vim.cmd("colorscheme rose-pine")
+      ColorMyPencils()
     end,
   },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-  },
-  {
-    {
-      "craftzdog/solarized-osaka.nvim",
-      lazy = true,
-      priority = 1000,
-      opts = function()
-        return {
-          transparent = true,
-          styles = {
-            comments = {
-              italic = true,
-            },
-            sidebars = "transparent",
-            floats = "transparent",
-          },
-        }
-      end,
-    },
-  },
-  {
-    "EdenEast/nightfox.nvim",
-  },
-  {
-    "folke/tokyonight.nvim",
-    opts = function()
-      return {
-        transparent = true,
-        styles = {
-          comments = {
-            italic = true,
-          },
-          sidebars = "transparent",
-          floats = "transparent",
-        },
-      }
-    end,
-  },
+  -- {
+  --   "catppuccin/nvim",
+  --   name = "catppuccin",
+  -- },
+  -- {
+  --   "EdenEast/nightfox.nvim",
+  -- },
 }
