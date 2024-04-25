@@ -5,6 +5,7 @@ end
 
 return {
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
   {
     "sainnhe/gruvbox-material",
     enabled = true,
@@ -22,6 +23,15 @@ return {
       vim.g.gruvbox_material_better_performance = 1
 
       -- vim.cmd.colorscheme("gruvbox-material")
+    end,
+  },
+  { "rebelot/kanagawa.nvim", lazy = false },
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require("github-theme").setup({})
     end,
   },
   {

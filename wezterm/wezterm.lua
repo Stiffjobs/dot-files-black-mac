@@ -9,10 +9,14 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
-config.color_scheme = "Afterglow"
-config.font_size = 16
-config.font = wezterm.font("Hack Nerd Font", { weight = "Bold", italic = false })
-config.window_background_opacity = 0.9
+-- config.color_scheme = "3024 (base16)"
+
+config.font_size = 18
+config.font = wezterm.font("Hack Nerd Font", { italic = false })
+config.window_background_opacity = 1.0
+config.window_decorations = "RESIZE"
+
+-- config.use_fancy_tab_bar = false
 
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
@@ -45,10 +49,10 @@ config.keys = {
 		}),
 	},
 	--pane keybindings
-	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
-	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
 	--tab navigation
 	{
 		key = "p",
@@ -77,4 +81,43 @@ config.keys = {
 	vimkeys.split_nav("resize", "l"),
 }
 -- and finally, return the configuration to wezterm
+wezterm.on("update-right-status", function(window, pane)
+	-- Workspace name
+	local stat = window:active_workspace()
+	-- It's a little silly to have workspace name all the time
+	-- Utilize this to display LDR or current key table name
+	if window:active_key_table() then
+		stat = window:active_key_table()
+	end
+	if window:leader_is_active() then
+		stat = "LDR"
+	end
+
+	-- Current working directory
+	local basename = function(s)
+		-- Nothign a little regex can't fix
+		return string.gsub(s, "(.*[/\\])(.*)", "%2")
+	end
+	local cwd = basename(pane:get_current_working_dir())
+	-- Current command
+	local cmd = basename(pane:get_foreground_process_name())
+
+	-- Time
+	local time = wezterm.strftime("%H:%M")
+
+	-- Let's add color to one of the components
+	window:set_right_status(wezterm.format({
+		-- Wezterm has a built-in nerd fonts
+		{ Text = wezterm.nerdfonts.oct_table .. "  " .. stat },
+		{ Text = " | " },
+		{ Text = wezterm.nerdfonts.md_folder .. "  " .. cwd },
+		{ Text = " | " },
+		{ Foreground = { Color = "FFB86C" } },
+		{ Text = wezterm.nerdfonts.fa_code .. "  " .. cmd },
+		"ResetAttributes",
+		{ Text = " | " },
+		{ Text = wezterm.nerdfonts.md_clock .. "  " .. time },
+		{ Text = " |" },
+	}))
+end)
 return config
