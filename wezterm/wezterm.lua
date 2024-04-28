@@ -65,6 +65,17 @@ config.keys = {
 		action = act.ActivateTabRelative(1),
 	},
 	{
+		key = "d",
+		mods = "LEADER",
+		action = act.CloseCurrentPane({ confirm = true }),
+	},
+	{
+		key = "c",
+		mods = "LEADER",
+		action = act.SpawnTab("CurrentPaneDomain"),
+	},
+
+	{
 		key = "w",
 		mods = "LEADER",
 		action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }),
