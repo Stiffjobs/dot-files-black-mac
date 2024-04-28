@@ -1,0 +1,49 @@
+[
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "g c c": "editor::ToggleComments",
+      "shift-k": "editor::Hover",
+      "space c f": "editor::Format",
+      "space c r": "editor::Rename",
+      "space f": "file_finder::Toggle",
+      "space c a": "editor::ToggleCodeActions",
+      "space o": "tab_switcher::Toggle",
+      "space e": "workspace::ToggleLeftDock",
+      "space v": "pane::SplitLeft",
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePrevItem",
+      "space q": "pane::CloseActiveItem",
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPrevDiagnostic"
+    }
+  },
+  {
+    // keybindings for insert-mode
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j j": "vim::NormalBefore" // remap jj insert mode to escape.
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w z": "workspace::ToggleZoom",
+      "ctrl-w t": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      // "down": ["workspace::SendKeystrokes", "4 j"]
+      // "up": ["workspace::SendKeystrokes", "4 k"]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock"
+    }
+  }
+]
