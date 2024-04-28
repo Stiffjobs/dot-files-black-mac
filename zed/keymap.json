@@ -14,6 +14,10 @@
       "shift-l": "pane::ActivateNextItem",
       "shift-h": "pane::ActivatePrevItem",
       "space q": "pane::CloseActiveItem",
+      "space l": ["workspace::ActivatePaneInDirection", "Right"],
+      "space h": ["workspace::ActivatePaneInDirection", "Left"],
+      "space k": ["workspace::ActivatePaneInDirection", "Top"],
+      "space j": ["workspace::ActivatePaneInDirection", "Down"],
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPrevDiagnostic"
     }
