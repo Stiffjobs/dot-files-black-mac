@@ -1,7 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+ColorMyPencils("tokyonight-day")
 -- ColorMyPencils("rose-pine")
-ColorMyPencils("rose-pine")
+-- ColorMyPencils("rose-pine-moon")
 -- vim.cmd.colorscheme("rose-pine")
 -- ColorMyPencils("rose-pine")
 -- ColorMyPencils("nightfly")

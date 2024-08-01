@@ -5,35 +5,61 @@ end
 
 return {
   { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true },
-  {
-    "sainnhe/gruvbox-material",
-    enabled = true,
-    -- priority = 1000,
-    config = function()
-      vim.g.gruvbox_material_transparent_background = 0
-      vim.g.gruvbox_material_foreground = "mix"
-      vim.g.gruvbox_material_background = "hard" -- soft, medium, hard
-      vim.g.gruvbox_material_ui_contrast = "high" -- The contrast of line numbers, indent lines, etc.
-      vim.g.gruvbox_material_float_style = "bright" -- Background of floating windows
-      vim.g.gruvbox_material_statusline_style = "material"
-
-      -- vim.g.gruvbox_material_colors_override = { bg0 = '#000000' } -- #0e1010
-      -- vim.g.gruvbox_material_colors_override = { bg0 = "#121212" }
-      vim.g.gruvbox_material_better_performance = 1
-
-      -- vim.cmd.colorscheme("gruvbox-material")
-    end,
-  },
   { "rebelot/kanagawa.nvim", lazy = false },
   {
-    "projekt0n/github-nvim-theme",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
     config = function()
-      require("github-theme").setup({})
+      require("gruvbox").setup({
+        --   terminal_colors = false, -- add neovim terminal colors
+        --   undercurl = true,
+        --   underline = false,
+        --   bold = true,
+        --   italic = {
+        --     strings = false,
+        --     emphasis = false,
+        --     comments = false,
+        --     operators = false,
+        --     folds = false,
+        --   },
+        --   strikethrough = true,
+        --   invert_selection = false,
+        --   invert_signs = false,
+        --   invert_tabline = false,
+        --   invert_intend_guides = false,
+        --   inverse = false, -- invert background for search, diffs, statuslines and errors
+        --   contrast = "hard", -- can be "hard", "soft" or empty string
+        --   dim_inactive = false,
+        --   transparent_mode = true,
+        -- })
+      })
     end,
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        -- transparent = true,
+        -- styles = {
+        --   sidebars = "transparent",
+        --   floats = "transparent",
+        -- },
+        on_highlights = function(hl, colors)
+          hl.LineNr = {
+            fg = colors.yellow,
+          }
+          hl.CursorLineNr = {
+            fg = colors.yellow,
+          }
+        end,
+      })
+
+      vim.cmd("colorscheme tokyonight")
+    end,
+  },
+
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -52,7 +78,23 @@ return {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
   -- },
-  -- {
-  --   "EdenEast/nightfox.nvim",
-  -- },
+  {
+    "EdenEast/nightfox.nvim",
+  },
+  {
+    "0xstepit/flow.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("flow").setup({
+        transparent = true, -- Set transparent background.
+        fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+        mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+        aggressive_spell = false, -- Display colors for spell check.
+      })
+
+      vim.cmd("colorscheme flow")
+    end,
+  },
 }
