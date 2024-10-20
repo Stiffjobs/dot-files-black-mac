@@ -10,7 +10,9 @@ local config = wezterm.config_builder()
 
 -- For example, changing the color scheme:
 -- config.color_scheme = "3024 (base16)"
-config.color_scheme = "Catppuccin Mocha (Gogh)"
+-- config.color_scheme = "Catppuccin Mocha (Gogh)"
+config.color_scheme = "rose-pine-moon"
+config.color_scheme = "Afterglow"
 config.color_scheme = "carbonfox"
 config.font_size = 18
 config.font = wezterm.font("Hack Nerd Font", { italic = false })
@@ -19,8 +21,9 @@ config.window_decorations = "RESIZE"
 
 -- config.use_fancy_tab_bar = false
 config.colors = {
-	cursor_bg = "#a268cc",
-	cursor_fg = "#ffffff",
+	-- background = "#000000",
+	-- cursor_bg = "#24a346",
+	-- cursor_fg = "#ffffff",
 }
 config.leader = { key = "Space", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {

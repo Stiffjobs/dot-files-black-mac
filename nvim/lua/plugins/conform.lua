@@ -10,6 +10,7 @@ return {
         cpp = { "clang-format" },
         javascript = { "prettier" },
         typescript = { "prettier" },
+        ruby = { "rubocop" },
         javascriptreact = { "prettier" },
         typescriptreact = { "prettier" },
         go = { "gofmt" },

@@ -4,62 +4,135 @@ function ColorMyPencils(color)
 end
 
 return {
-  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-  { "rebelot/kanagawa.nvim", lazy = false },
+  -- add dracula
+  { "Mofiqul/dracula.nvim" },
+
   {
-    "ellisonleao/gruvbox.nvim",
-    name = "gruvbox",
+    "olivercederborg/poimandres.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("gruvbox").setup({
-        --   terminal_colors = false, -- add neovim terminal colors
-        --   undercurl = true,
-        --   underline = false,
-        --   bold = true,
-        --   italic = {
-        --     strings = false,
-        --     emphasis = false,
-        --     comments = false,
-        --     operators = false,
-        --     folds = false,
-        --   },
-        --   strikethrough = true,
-        --   invert_selection = false,
-        --   invert_signs = false,
-        --   invert_tabline = false,
-        --   invert_intend_guides = false,
-        --   inverse = false, -- invert background for search, diffs, statuslines and errors
-        --   contrast = "hard", -- can be "hard", "soft" or empty string
-        --   dim_inactive = false,
-        --   transparent_mode = true,
-        -- })
+      require("poimandres").setup({
+        disable_background = true,
+        -- leave this setup function empty for default config
+        -- or refer to the configuration section
+        -- for configuration options
       })
+    end,
+
+    -- optionally set the colorscheme within lazy config
+    init = function()
+      vim.cmd("colorscheme poimandres")
     end,
   },
   {
     "folke/tokyonight.nvim",
     lazy = false,
-    opts = {},
+    priority = 1000,
     config = function()
       require("tokyonight").setup({
-        -- transparent = true,
-        -- styles = {
-        --   sidebars = "transparent",
-        --   floats = "transparent",
-        -- },
-        on_highlights = function(hl, colors)
-          hl.LineNr = {
-            fg = colors.yellow,
-          }
-          hl.CursorLineNr = {
-            fg = colors.yellow,
-          }
-        end,
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        transparent = true, -- Enable this to disable setting the background color
+        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+        styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = false },
+          keywords = { italic = false },
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark", -- style for sidebars, see below
+          floats = "dark", -- style for floating windows
+        },
       })
-
-      vim.cmd("colorscheme tokyonight")
     end,
   },
-
+  {
+    "ellisonleao/gruvbox.nvim",
+    name = "gruvbox",
+    config = function()
+      require("gruvbox").setup({
+        terminal_colors = true, -- add neovim terminal colors
+        undercurl = true,
+        underline = false,
+        bold = true,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        invert_intend_guides = false,
+        inverse = true, -- invert background for search, diffs, statuslines and errors
+        contrast = "", -- can be "hard", "soft" or empty string
+        palette_overrides = {},
+        overrides = {},
+        dim_inactive = false,
+        transparent_mode = false,
+      })
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "auto", -- latte, frappe, macchiato, mocha
+        background = { -- :h background
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true, -- disables setting the background color.
+        show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+        term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+        dim_inactive = {
+          enabled = false, -- dims the background color of inactive window
+          shade = "dark",
+          percentage = 0.15, -- percentage of the shade to apply to the inactive window
+        },
+        no_italic = false, -- Force no italic
+        no_bold = false, -- Force no bold
+        no_underline = false, -- Force no underline
+        styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
+          conditionals = { "italic" },
+          loops = {},
+          functions = {},
+          keywords = {},
+          strings = {},
+          variables = {},
+          numbers = {},
+          booleans = {},
+          properties = {},
+          types = {},
+          operators = {},
+          -- miscs = {}, -- Uncomment to turn off hard-coded styles
+        },
+        color_overrides = {},
+        custom_highlights = {},
+        default_integrations = true,
+        integrations = {
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+          notify = false,
+          mini = {
+            enabled = true,
+            indentscope_color = "",
+          },
+          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        },
+      })
+    end,
+  },
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -67,34 +140,10 @@ return {
       require("rose-pine").setup({
         disable_background = true,
         styles = {
+          italic = false,
           transparency = true,
         },
       })
-      vim.cmd("colorscheme rose-pine")
-      ColorMyPencils()
-    end,
-  },
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  -- },
-  {
-    "EdenEast/nightfox.nvim",
-  },
-  {
-    "0xstepit/flow.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require("flow").setup({
-        transparent = true, -- Set transparent background.
-        fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
-        mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
-        aggressive_spell = false, -- Display colors for spell check.
-      })
-
-      vim.cmd("colorscheme flow")
     end,
   },
 }
