@@ -11,9 +11,11 @@ local config = wezterm.config_builder()
 -- For example, changing the color scheme:
 -- config.color_scheme = "3024 (base16)"
 -- config.color_scheme = "Catppuccin Mocha (Gogh)"
-config.color_scheme = "rose-pine-moon"
+-- config.color_scheme = "rose-pine"
+-- config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "carbonfox"
 config.color_scheme = "Afterglow"
-config.color_scheme = "carbonfox"
+-- config.color_scheme = "Dracula"
 config.font_size = 18
 config.font = wezterm.font("Hack Nerd Font", { italic = false })
 config.window_background_opacity = 1.0
