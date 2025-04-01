@@ -25,7 +25,7 @@ return {
       },
       formatters = {
         prettier = {
-          -- prepend_args = { "--single-quote", "--use-tabs", "--arrow-parens avoid" },
+          prepend_args = { "--single-quote", "--use-tabs", "--arrow-parens avoid" },
         },
       },
     }

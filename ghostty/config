@@ -1,8 +1,7 @@
 window-padding-color = background
-#theme = rose-pine
 theme = vesper
-# theme = Github Dark
-font-size = 18
+# theme = rose-pine
+font-size = 16
 background-opacity = 0.8
 background-blur-radius = 20
 

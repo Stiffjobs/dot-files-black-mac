@@ -14,11 +14,12 @@ local config = wezterm.config_builder()
 -- config.color_scheme = "rose-pine"
 -- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "carbonfox"
-config.color_scheme = "Afterglow"
--- config.color_scheme = "Dracula"
+-- config.color_scheme = "Vesper"
+config.color_scheme = "Dracula"
 config.font_size = 18
 config.font = wezterm.font("Hack Nerd Font", { italic = false })
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.8
+config.macos_window_background_blur = 10
 config.window_decorations = "RESIZE"
 
 -- config.use_fancy_tab_bar = false

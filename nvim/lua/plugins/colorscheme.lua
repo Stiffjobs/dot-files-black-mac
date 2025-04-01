@@ -34,7 +34,7 @@ return {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        transparent = true, -- Enable this to disable setting the background color
+        -- transparent = true, -- Enable this to disable setting the background color
         terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
         styles = {
           -- Style to be applied to different syntax groups
@@ -49,33 +49,16 @@ return {
     end,
   },
   {
-    "ellisonleao/gruvbox.nvim",
-    name = "gruvbox",
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("gruvbox").setup({
-        terminal_colors = true, -- add neovim terminal colors
-        undercurl = true,
-        underline = false,
-        bold = true,
-        italic = {
-          strings = false,
-          emphasis = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        strikethrough = true,
-        invert_selection = false,
-        invert_signs = false,
-        invert_tabline = false,
-        invert_intend_guides = false,
-        inverse = true, -- invert background for search, diffs, statuslines and errors
-        contrast = "", -- can be "hard", "soft" or empty string
-        palette_overrides = {},
-        overrides = {},
-        dim_inactive = false,
-        transparent_mode = false,
-      })
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_background = "hard"
+      vim.g.gruvbox_material_transparent_background = "1"
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {
