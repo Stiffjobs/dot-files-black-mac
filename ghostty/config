@@ -1,10 +1,11 @@
 window-padding-color = background
-theme = vesper
+# theme = "carbonfox"
 # theme = rose-pine
+# theme = vesper
+theme = ayu
 font-size = 16
 background-opacity = 0.8
 background-blur-radius = 20
-
 keybind = ctrl+space>-=new_split:down
 keybind = ctrl+space>shift+\=new_split:right
 keybind = ctrl+space>l=goto_split:right

@@ -3,32 +3,31 @@ return {
   lazy = true,
   event = { "BufReadPre", "BufNewFile" },
   opts = function()
-    local opts = {
+    return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "black" },
         cpp = { "clang-format" },
-        javascript = { "prettier" },
-        typescript = { "prettier" },
+        javascript = { "prettierd" },
+        typescript = { "prettierd" },
         ruby = { "rubocop" },
-        javascriptreact = { "prettier" },
-        typescriptreact = { "prettier" },
+        javascriptreact = { "prettierd" },
+        typescriptreact = { "prettierd" },
         go = { "gofmt" },
-        css = { "prettier" },
-        html = { "prettier" },
-        json = { "prettier" },
-        yaml = { "prettier" },
-        markdown = { "prettier" },
-        graphql = { "prettier" },
+        css = { "prettierd" },
+        html = { "prettierd" },
+        json = { "prettierd" },
+        yaml = { "prettierd" },
+        markdown = { "prettierd" },
+        graphql = { "prettierd" },
         zig = { "zigfmt" },
         rust = { "rustfmt" },
       },
       formatters = {
-        prettier = {
-          prepend_args = { "--single-quote", "--use-tabs", "--arrow-parens avoid" },
+        prettierd = {
+          prepend_args = { "--single-quote", "--use-tabs" },
         },
       },
     }
-    return opts
   end,
 }
