@@ -76,6 +76,8 @@ return {
         "vim",
         "vimdoc",
         "yaml",
+        "elixir",
+        "eex",
       },
       incremental_selection = {
         enable = true,

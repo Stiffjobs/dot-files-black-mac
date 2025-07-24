@@ -1,12 +1,12 @@
 window-padding-color = background
+# theme = vesper
 # theme = Dracula+
-# theme = ayu
+theme = ayu
 # theme = rose-pine
 # theme = "carbonfox"
-theme = vesper
 font-size = 16
-# background-opacity = 0.8
-# background-blur-radius = 20
+background-opacity = 0.8
+background-blur-radius = 20
 keybind = ctrl+space>-=new_split:down
 keybind = ctrl+space>shift+\=new_split:right
 keybind = ctrl+space>l=goto_split:right
@@ -17,4 +17,3 @@ keybind = ctrl+space>m=toggle_split_zoom
 keybind = ctrl+space>n=next_tab
 keybind = ctrl+space>p=previous_tab
 keybind = super+f=toggle_fullscreen
-keybind = shift+enter=text:\n
