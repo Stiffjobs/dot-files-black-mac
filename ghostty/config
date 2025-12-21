@@ -1,21 +1,23 @@
 window-padding-color = background
 # theme = Dracula+
+# theme = "Rose Pine"
 # theme = ayu
-theme = rose-pine
+# theme ="Rose Pine" 
 # theme = "carbonfox"
 # theme = vesper
-# theme = "Github-Dark-Colorblind"
-font-size = 16
-background = #000000
-background-opacity = 0.8
+# theme = "Dracula"
+font-size = 20
+theme = Ayu
+# background = #000000
+# background-opacity = 0.7
 background-blur-radius = 20
 keybind = ctrl+super+v=new_split:down
-keybind = ctrl+super+s=new_split:right
-keybind = ctrl+super+l=goto_split:right
-keybind = ctrl+super+k=goto_split:top
-keybind = ctrl+super+j=goto_split:bottom
-keybind = ctrl+super+h=goto_split:left
-keybind = ctrl+super+m=toggle_split_zoom
+keybind = ctrl+super+h=new_split:right
+keybind = performable:ctrl+l=goto_split:right
+keybind = performable:ctrl+k=goto_split:top
+keybind = performable:ctrl+j=goto_split:bottom
+keybind = performable:ctrl+h=goto_split:left
+keybind = ctrl+m=toggle_split_zoom
 keybind = ctrl+super+n=next_tab
 keybind = ctrl+super+p=previous_tab
 keybind = super+f=toggle_fullscreen
