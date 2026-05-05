@@ -60,25 +60,6 @@ return {
       })
     end,
   },
-
-  {
-    "olivercederborg/poimandres.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("poimandres").setup({
-        disable_background = true,
-        -- leave this setup function empty for default config
-        -- or refer to the configuration section
-        -- for configuration options
-      })
-    end,
-
-    -- optionally set the colorscheme within lazy config
-    init = function()
-      vim.cmd("colorscheme poimandres")
-    end,
-  },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -131,19 +112,6 @@ return {
           -- telescope = true,
         },
       })
-    end,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- Optionally configure and load the colorscheme
-      -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
-      vim.g.gruvbox_material_background = "hard"
-      vim.g.gruvbox_material_transparent_background = "1"
-      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
   {

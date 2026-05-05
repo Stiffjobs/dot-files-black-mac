@@ -6,6 +6,7 @@ return {
     return {
       formatters_by_ft = {
         lua = { "stylua" },
+        swift = { "swift" },
         python = { "black" },
         cpp = { "clang-format" },
         javascript = { "prettierd" },
