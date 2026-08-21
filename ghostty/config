@@ -1,3 +1,4 @@
+command = /opt/homebrew/bin/tmux new-session
 window-padding-color = background
 # theme = Dracula+
 # theme = "Rose Pine"
@@ -8,6 +9,8 @@ window-padding-color = background
 # theme = "Dracula"
 font-size = 20
 theme = "TokyoNight"
+# theme = "Ayu"
+# theme = "Catppuccin Mocha"
 # background = #000000
 # background-opacity = 0.8
 background-blur-radius = 20
@@ -20,4 +23,3 @@ keybind = ctrl+super+n=next_tab
 keybind = ctrl+super+p=previous_tab
 keybind = super+f=toggle_fullscreen
 keybind = shift+enter=text:\n
-
