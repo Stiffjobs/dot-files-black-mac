@@ -6,13 +6,13 @@ window-padding-color = background
 # theme ="Rose Pine" 
 # theme = "carbonfox"
 # theme = vesper
-# theme = "Dracula"
+theme = "Dracula"
 font-size = 20
-theme = "TokyoNight"
+# theme = "TokyoNight"
 # theme = "Ayu"
 # theme = "Catppuccin Mocha"
 # background = #000000
-# background-opacity = 0.8
+background-opacity = 0.9
 background-blur-radius = 20
 keybind = performable:ctrl+l=goto_split:right
 keybind = performable:ctrl+k=goto_split:top
@@ -23,3 +23,4 @@ keybind = ctrl+super+n=next_tab
 keybind = ctrl+super+p=previous_tab
 keybind = super+f=toggle_fullscreen
 keybind = shift+enter=text:\n
+macos-titlebar-style = tabs
