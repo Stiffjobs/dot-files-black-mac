@@ -1,20 +1,28 @@
-command = /opt/homebrew/bin/tmux new-session
+# Every new cmux surface runs this script: one tmux session per cmux
+# workspace, own window per split. New workspaces start in ~ (cmux's
+# app.workspaceInheritWorkingDirectory is off in ~/.config/cmux/cmux.json).
+# command = /Users/stiffjobs/.dotfiles/tmux/cmux-launch.sh
+working-directory = home
 window-padding-color = background
 # theme = Dracula+
 # theme = "Rose Pine"
 # theme = ayu
-# theme ="Rose Pine" 
+theme ="Rose Pine" 
 # theme = "carbonfox"
 # theme = vesper
 # theme = "Dracula"
 font-size = 20
-theme = "TokyoNight"
+# theme = "TokyoNight"
 # theme = "Ayu"
 # theme = "Catppuccin Mocha"
 # background = #000000
 background-opacity = 0.9
 background-blur-radius = 20
 keybind = ctrl+m=toggle_split_zoom
+keybind = super+alt+h=goto_split:left
+keybind = super+alt+j=goto_split:down
+keybind = super+alt+k=goto_split:up
+keybind = super+alt+l=goto_split:right
 keybind = ctrl+super+n=next_tab
 keybind = ctrl+super+p=previous_tab
 keybind = super+f=toggle_fullscreen
