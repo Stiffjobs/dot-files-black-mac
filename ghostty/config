@@ -19,10 +19,16 @@ font-size = 20
 background-opacity = 0.9
 background-blur-radius = 20
 keybind = ctrl+m=toggle_split_zoom
-keybind = super+ctrl+h=goto_split:left
-keybind = super+ctrl+j=goto_split:down
-keybind = super+ctrl+k=goto_split:up
-keybind = super+ctrl+l=goto_split:right
+keybind = performable:ctrl+h=goto_split:left
+keybind = performable:ctrl+j=goto_split:down
+keybind = performable:ctrl+k=goto_split:up
+keybind = performable:ctrl+l=goto_split:right
+# backend-ghostty activates this table in Neovim (Ghostty and cmux).
+keybind = nvim/
+keybind = nvim/ctrl+h=text:\x08
+keybind = nvim/ctrl+j=text:\x0a
+keybind = nvim/ctrl+k=text:\x0b
+keybind = nvim/ctrl+l=text:\x0c
 keybind = super+f=toggle_fullscreen
 keybind = shift+enter=text:\n
 macos-titlebar-style = tabs
